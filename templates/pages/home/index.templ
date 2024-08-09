@@ -1,0 +1,13 @@
+package pages
+
+import "github.com/ssss-tantalum/gophatt/templates/layouts"
+
+type HomePageProps struct {
+	layouts.BaseProps
+}
+
+templ Home(props HomePageProps) {
+	@layouts.Base(props.BaseProps) {
+		<div class="text-slate-800 dark:text-white">This is Home Page.</div>
+	}
+}

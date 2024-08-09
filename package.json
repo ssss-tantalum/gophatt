@@ -1,0 +1,34 @@
+{
+  "name": "gophatt",
+  "version": "0.0.1",
+  "description": "Frontend part of Gophatt app.",
+  "author": "ssss-tantalum",
+  "license": "MIT",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "source": [
+    "./assets/script.js",
+    "./assets/style.css"
+  ],
+  "targets": {
+    "default": {
+      "distDir": "./static"
+    }
+  },
+  "scripts": {
+    "watch": "parcel watch",
+    "fmt": "prettier --write .",
+    "dev": "parcel build --no-optimize",
+    "build": "parcel build"
+  },
+  "dependencies": {
+    "alpinejs": "latest",
+    "@tailwindcss/forms": "latest",
+    "@tailwindcss/typography": "latest",
+    "htmx.org": "latest",
+    "tailwindcss": "latest"
+  },
+  "devDependencies": {
+    "parcel": "latest",
+    "prettier": "latest"
+  }
+}

@@ -1,0 +1,30 @@
+package layouts
+
+import "github.com/ssss-tantalum/gophatt/templates/components"
+
+type BaseProps struct {
+	Title           string
+	IsAuthenticated bool
+}
+
+templ Base(props BaseProps) {
+	<!DOCTYPE html>
+	<html
+		x-data
+		:class="$store.darkMode.on && 'dark'"
+	>
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>{ props.Title }</title>
+			<link href="/static/style.css" rel="stylesheet"/>
+			<script src="/static/script.js" defer></script>
+		</head>
+		<body class="bg-white dark:bg-slate-800">
+			@components.Navigation()
+			<main>
+				{ children... }
+			</main>
+		</body>
+	</html>
+}
