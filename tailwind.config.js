@@ -4,6 +4,6 @@ module.exports = {
   theme: {
     extend: {},
   },
-  darkMode: 'class',
+  darkMode: 'selector',
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 }
