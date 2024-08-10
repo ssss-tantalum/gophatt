@@ -26,18 +26,20 @@ func (s *Server) initRoutes(app *app.App) {
 	router.Use(middleware.Recover())
 	router.Use(session.Middleware(sessions.NewCookieStore([]byte(app.Cfg().SecretKey))))
 
-	// View Routes
+	// View routes
 	{
 		homeHandler := view.NewHomeHandler(app)
 		router.GET("/", homeHandler.Index)
 
 	}
 
-	// API Routes
+	// API routes
 	apiRoutes := router.Group("/api")
 	{
 		authHandler := api.NewAuthHandler(app)
 		apiRoutes.POST("/auth/signup", authHandler.SignUp)
+		apiRoutes.POST("/auth/login", authHandler.Login)
+		apiRoutes.GET("/auth/logout", authHandler.Logout, AuthMiddleware)
 	}
 }
 

@@ -1,0 +1,23 @@
+package pages
+
+import (
+	v "github.com/ssss-tantalum/gophatt/pkg/validate"
+	"github.com/ssss-tantalum/gophatt/templates/layouts"
+)
+
+type LoginFormValues struct {
+	Email    string `form:"email"`
+	Password string `form:"password"`
+}
+
+type LoginPageProps struct {
+	Values LoginFormValues
+	Errors v.Errors
+	layouts.BaseProps
+}
+
+templ Login(props LoginPageProps) {
+}
+
+templ LoginForm(values LoginFormValues, errors v.Errors) {
+}

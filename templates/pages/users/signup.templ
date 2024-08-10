@@ -1,8 +1,20 @@
 package pages
 
-import "github.com/ssss-tantalum/gophatt/templates/layouts"
+import (
+	v "github.com/ssss-tantalum/gophatt/pkg/validate"
+	"github.com/ssss-tantalum/gophatt/templates/layouts"
+)
+
+type SignUpFormValues struct {
+	Username        string `form:"username"`
+	Email           string `form:"email"`
+	Password        string `form:"password"`
+	ConfirmPassword string `form:"confirm_password"`
+}
 
 type SignUpPageProps struct {
+	Values SignUpFormValues
+	Errors v.Errors
 	layouts.BaseProps
 }
 
@@ -12,4 +24,6 @@ templ SignUp(props SignUpPageProps) {
 	}
 }
 
-templ SignUpForm() {}
+templ SignUpForm(values SignUpFormValues, errors v.Errors) {
+	<div>Hello!</div>
+}
