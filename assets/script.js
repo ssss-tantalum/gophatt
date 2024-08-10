@@ -4,7 +4,7 @@ import Alpine from 'alpinejs'
 window.Alpine = Alpine
 
 Alpine.store('darkMode', {
-  on: false,
+  on: true,
   toggle() {
     this.on = !this.on
   },

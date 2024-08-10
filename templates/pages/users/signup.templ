@@ -1,0 +1,15 @@
+package pages
+
+import "github.com/ssss-tantalum/gophatt/templates/layouts"
+
+type SignUpPageProps struct {
+	layouts.BaseProps
+}
+
+templ SignUp(props SignUpPageProps) {
+	@layouts.Base(props.BaseProps) {
+		<div>This is Sign up page.</div>
+	}
+}
+
+templ SignUpForm() {}

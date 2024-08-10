@@ -10,11 +10,11 @@ import templruntime "github.com/a-h/templ/runtime"
 
 import "github.com/ssss-tantalum/gophatt/templates/layouts"
 
-type HomePageProps struct {
+type SignUpPageProps struct {
 	layouts.BaseProps
 }
 
-func Home(props HomePageProps) templ.Component {
+func SignUp(props SignUpPageProps) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
@@ -44,7 +44,7 @@ func Home(props HomePageProps) templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!-- Hero --> <div class=\"bg-gradient-to-b from-violet-600/10 via-transparent\"><div class=\"max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-8\"><!-- Title --><div class=\"max-w-3xl text-center mx-auto\"><h1 class=\"block font-medium text-slate-800 dark:text-gray-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl\">Go (Ent, Echo), PostgreSQL, HTMX, AlpineJS, TailwindCSS & Templ Full-stack web dev.</h1></div><!-- End Title --><div class=\"max-w-3xl text-center mx-auto\"><p class=\"text-lg text-slate-800/70 dark:text-white/70\">yet another simple way to develop.</p></div><!-- Buttons --><div class=\"text-center\"><a class=\"inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 shadow-lg shadow-transparent hover:shadow-blue-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:shadow-blue-700/50 py-3 px-6\" href=\"#\">Get started <svg class=\"shrink-0 size-4\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m9 18 6-6-6-6\"></path></svg></a></div><!-- End Buttons --></div></div><!-- End Hero -->")
+			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div>This is Sign up page.</div>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}
@@ -54,6 +54,28 @@ func Home(props HomePageProps) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
+		return templ_7745c5c3_Err
+	})
+}
+
+func SignUpForm() templ.Component {
+	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
+		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
+		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templruntime.GetBuffer(templ_7745c5c3_W)
+		if !templ_7745c5c3_IsBuffer {
+			defer func() {
+				templ_7745c5c3_BufErr := templruntime.ReleaseBuffer(templ_7745c5c3_Buffer)
+				if templ_7745c5c3_Err == nil {
+					templ_7745c5c3_Err = templ_7745c5c3_BufErr
+				}
+			}()
+		}
+		ctx = templ.InitializeContext(ctx)
+		templ_7745c5c3_Var3 := templ.GetChildren(ctx)
+		if templ_7745c5c3_Var3 == nil {
+			templ_7745c5c3_Var3 = templ.NopComponent
+		}
+		ctx = templ.ClearChildren(ctx)
 		return templ_7745c5c3_Err
 	})
 }
