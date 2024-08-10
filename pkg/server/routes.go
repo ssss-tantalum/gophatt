@@ -10,6 +10,9 @@ import (
 	"github.com/ssss-tantalum/gophatt/pkg/app"
 	"github.com/ssss-tantalum/gophatt/pkg/handler/api"
 	"github.com/ssss-tantalum/gophatt/pkg/handler/view"
+	"github.com/ssss-tantalum/gophatt/templates"
+	"github.com/ssss-tantalum/gophatt/templates/layouts"
+	pages "github.com/ssss-tantalum/gophatt/templates/pages/errors"
 )
 
 func (s *Server) initRoutes(app *app.App) {
@@ -52,7 +55,22 @@ func customHTTPErrorHandler(err error, c echo.Context) {
 
 	switch code {
 	case 401:
+		templates.Render(c, pages.Unauthorized(pages.UnauthorizedPageProps{
+			BaseProps: layouts.BaseProps{
+				Title: "Gophatt | 401 Unauthorized",
+			},
+		}))
 	case 404:
+		templates.Render(c, pages.NotFound(pages.NotFoundPageProps{
+			BaseProps: layouts.BaseProps{
+				Title: "Gophatt |404 NotFound",
+			},
+		}))
 	default:
+		templates.Render(c, pages.InternalServerError(pages.InternalServerErrorPageProps{
+			BaseProps: layouts.BaseProps{
+				Title: "Gophatt | 505 Internal Server Error",
+			},
+		}))
 	}
 }
